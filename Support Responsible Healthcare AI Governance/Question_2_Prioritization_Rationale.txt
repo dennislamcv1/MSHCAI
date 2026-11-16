@@ -1,0 +1,31 @@
+Question 2 - Prioritization Rationale
+
+Compliance checkpoints prioritized
+
+I treated two compliance checkpoints as highest priority, both in a GAP state.
+
+Privacy - GAP. The packet states that de-identification protocols for ambient voice data have not been formally documented, and that it is unknown whether audio containing PHI is retained or transmitted by the vendor. In clinical documentation, the raw input is a bedside conversation, so an undocumented data path means PHI exposure cannot be ruled out. That made it PHI-adjacent and an immediate escalation.
+
+Regulatory Review - GAP. The MedScribe AI contract and Business Associate Agreement were under review, not confirmed executed, while the pilot was already active. The review had been identified but not completed, and the packet itself notes the pilot may be operating outside HIPAA third-party requirements. A live tool sending PHI to a vendor without a confirmed BAA outranks every performance question.
+
+I also watched Human Oversight closely. I marked it APPROACHING because clinicians do attest drafts, but no documented policy or secondary review step exists.
+
+Responsible AI principles prioritized
+
+Privacy & Security - category: Privacy; Security - state: GAP.
+Evidence: Contoso_Discovery_Input_Packet.docx > Section 6, Risks, Constraints, and Assumptions > "BAA under review, not yet confirmed"
+Evidence: Contoso_Discovery_Input_Packet.docx > Section 2, Data Sources > "Voice de-identification not documented"
+Together these show that the two controls that would protect patient audio, a contractual one and a technical one, are both unverified. With neither confirmed, I could not treat privacy as partially satisfied.
+
+Reliability & Safety - category: Accuracy/Reliability; Safety; Monitoring - state: GAP.
+Evidence: Contoso_Discovery_Input_Packet.docx > Section 2, Workflow > "No mandatory secondary review step"
+Evidence: Contoso_Discovery_Input_Packet.docx > Section 2, Pain Points/Exceptions > "Terminology Label inconsistency, Visual 3"
+The packet reports no result for note completeness or terminology accuracy, while a terminology mismatch is already flagged at Informatics Validation. An AI draft becomes part of the legal medical record on a single attestation, so unvalidated accuracy with no second check is a patient-safety-adjacent concern.
+
+Alignment to governance request
+
+The committee asked whether the tool is ready for phased expansion and which compliance, RAI, or ethics controls are required first. My priorities answer that directly: I ranked first the findings that would have to be resolved before any expansion could be authorized, ahead of adoption performance. The packet supports this ordering, since the AI Program Owner's sign-off is pending BAA confirmation.
+
+In my PDF, Component 2 (Compliance Review Findings) records Privacy and Regulatory Review as GAP, with the BAA and Data Flow Diagram Draft v0.9 as named evidence. Component 3 (Responsible AI Review Findings) records Privacy & Security and Reliability & Safety as GAP. Component 5 consolidates these as escalations E1, E2, and E3, routed to the Privacy Officer, Compliance Officer, and CMIO for immediate notification.
+
+Throughout, I kept my role observational: I documented states, attached evidence, and routed findings. The decision on expansion remains with the governance committee.
